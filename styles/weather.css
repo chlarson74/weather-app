@@ -1,0 +1,187 @@
+/* zeroed out margin and padding. created a universal box-sizing. established the universal font-family - per Google Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hanken Grotesk', sans-serif;
+    scroll-behavior: smooth; /* learned about slow scroll behavior from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp */
+}
+
+body{
+    background-color: #f5f5f5;
+}
+
+/* created a flex container for the header, main and footer elements */
+header,
+main,
+footer {
+    display: flex;
+    width: 85%;
+    margin:20px  auto;
+    justify-content: space-between;
+}
+/* created even spacing in the header and footer navs */
+nav {
+    display:flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
+nav a {
+    border-left: solid black 1px;
+    justify-content: center;
+    align-content:center;
+    padding-left:15px;
+    text-decoration: none;
+    color:black;
+    width: 100%;
+    /*width: 400px;*/
+}
+nav a:hover {
+    background-color:lightgray;
+}
+aside {
+    width: 20%;
+}
+
+aside p {
+    margin:20px 20px 20px 0;
+}
+aside a {
+    text-decoration: none;
+    font-weight: bold;
+    color:black;
+}
+/* faze will adjust the aesthetic to the profile photo */
+.faze {
+    width:80%;
+    height: auto;
+    filter: grayscale(100%);
+    transition:1s;
+    box-shadow: 2px 2px 10px black;
+}
+.faze:hover {
+    filter:none; 
+}
+/* creates a flex-wrap for the project images */
+article {
+    width:80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* filter property changes the image to a grayscale. creates a flex container for the paragraph tag to justify and align center. */
+.weather-result {
+    filter: grayscale(100%);
+    background-size: cover;
+    min-width: 300px;
+    min-height: 300px;
+    width:33.3%;
+    flex: 0 0 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:black solid 2px;
+    transition: 1s;
+}
+.weather-result:first-child {
+    width:99.9%;
+    background-position: center;
+}
+ /* this psuedo-class will remove the greyscale filter on hover */ 
+.weather-result:hover {
+    filter:none;
+}
+
+.weather-result p {
+    color:white;
+    text-shadow: 8px 8px 20px black;
+    font-size:25px;
+}
+
+.weather-result a {
+    padding: 100px 200px;
+    text-decoration: none;;
+}
+
+/* individual project classes for background images 
+#seo {
+    background-image: url(../images/seo-services.jpg);
+}
+#augmented {
+    background-image: url(../images/augmented.jpg);
+}
+#pike-place {
+    background-image: url(../images/pike-place.jpg);
+}
+#pike-street {
+    background-image: url(../images/pike-street.jpg);
+}
+#smith-tower {
+    background-image: url(../images/smith-tower.jpg);
+}
+#space-needle {
+    background-image: url(../images/space-needle.jpg);
+}
+#seat {
+    background-image: url(../images/seat-services.jpg);
+}
+#flag {
+    background-image: url(../images/red-flags.jpg);
+}
+#ai {
+    background-image: url(../images/ai-services.jpg);
+    background-color: lightgray;
+    background-blend-mode: multiply;
+}
+#ai p {
+    color:black;
+    text-shadow: 0px 0px 10px white;
+}
+#time {
+    background-image: url(../images/time-stream.jpg);
+} */
+
+/* large screens */
+@media screen and (max-width: 1324px) {
+    .weather-result {
+        width:50%;
+    }
+
+}
+/* medium screens */
+@media screen and (max-width: 883px) {
+    .weather-result {
+        width:1000%;
+    }
+    .weather-result a {
+        padding: 100px 100px;
+    }
+    main {
+        width: 95%;        
+    }
+    aside {
+        width: 30%;
+    }
+    /* creates a flex-wrap for the project images */
+    article {
+        width:70%;
+    }
+
+}
+/* small screens */
+@media screen and (max-width: 600px) {
+    main {
+        display: block;      
+    }
+    
+    article,
+    aside {
+        width: 100%;
+    }
+    footer h2 {
+        display: none;
+    }
+    .faze {
+        width:30%;
+    }
+
+}
