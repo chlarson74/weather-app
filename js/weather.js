@@ -1,27 +1,13 @@
 // SET OF GLOBAL VARIABLES — 
-// var cities = [] save a list of cities - empty array that you can append into
-// var apiStore = variable to store API key - public don’t display
+var city
 // var citySearched - searchHistory citylist
 // var input for text field in the form
 // var form for the input for itself
 // var currentDay = query selector -
 // var fiveDayForecast = query selector 
 
-var city
 
-// PSUEDOCODE:
-//------------------------------------------- 
-// STEP ONE:
-// create a basic interface HTML document
-// input to type search content
-// button for event listeners
-// div append the current weather to
-// div append the 5 day forecast to 
-//  ----------------ABOVE COMPLETED
 
-// STEP TWO:
-// page loads
-// user types into a box
 // eventListener on button gets the value and store it to a variable
 document.getElementById("submitButton").addEventListener("click", function(event){
     event.preventDefault()
@@ -37,7 +23,7 @@ function getweather(city) {
     }) 
     .then(function(data) {
         var currentDay = data.list[0]
-        console.log(currentDay)
+        //console.log(currentDay)
         displayCurrentWeather(currentDay, data.list)
     })
 }
@@ -65,14 +51,12 @@ function displayCurrentWeather(currentDay, forecast){
     displayFiveDayWeather(forecast)
 }
 
-function displayFiveDayWeather(forecast){ console.log(forecast)
+function displayFiveDayWeather(forecast){
     for (var i = 7; i < forecast.length; i+=8){
         var day=forecast[i]
-        console.log(day)
-        var forecastEl=document.getElementById("forecastFive")
-        var dateEl = document.createElement("span")
-        dateEl.innerText = dayjs.unix(day.dt).format("MM/DD/YYYY")
-        forecastEl.appendChild(dateEl)
+        //console.log(forecast)
+        //below will loop through the i and append to the ids with 8 iterations
+        var forecastEl=document.getElementById(`forecast${i}`)
         forecastEl.innerHTML = ""
         var cityNameEl = document.createElement("span")
         cityNameEl.innerText = city + " "
@@ -95,7 +79,32 @@ function displayFiveDayWeather(forecast){ console.log(forecast)
     }
 }
 
-
+// function displayFiveDayWeather(forecast){
+//     for (var i = 7; i < forecast.length; i+=8){
+//         var day=forecast[i]
+//         console.log(day)
+//         var forecastEl=document.getElementById("forecastOne")
+//         forecastEl.innerHTML = ""
+//         var cityNameEl = document.createElement("span")
+//         cityNameEl.innerText = city + " "
+//         forecastEl.appendChild(cityNameEl)
+//         var dateEl = document.createElement("span")
+//         dateEl.innerText = dayjs.unix(day.dt).format("MM/DD/YYYY")
+//         forecastEl.appendChild(dateEl)
+//         var imageEl = document.createElement("img")
+//         imageEl.src = "https://openweathermap.org/img/wn/" + day.weather[0].icon + ".png"
+//         forecastEl.appendChild(imageEl)
+//         var temperatureEl = document.createElement("p")
+//         temperatureEl.innerText = "temperature " + day.main.temp + "°"
+//         forecastEl.appendChild(temperatureEl)
+//         var humidityEl = document.createElement("p")
+//         humidityEl.innerText = "humidity " + day.main.humidity + "%"
+//         forecastEl.appendChild(humidityEl)
+//         var windEl = document.createElement("p")
+//         windEl.innerText = "wind speed " + day.wind.speed + "mph"
+//         forecastEl.appendChild(windEl)
+//     }
+// }
 
 // ——————— (in a function called searchWeather ————————————
 // STEP THREE:

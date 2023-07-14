@@ -64,19 +64,22 @@ aside a {
 .faze:hover {
     filter:none; 
 }
+section {
+    width: 80%;
+}
 /* creates a flex-wrap for the project images */
 article {
-    width:80%;
     display: flex;
     flex-wrap: wrap;
 }
 /* filter property changes the image to a grayscale. creates a flex container for the paragraph tag to justify and align center. */
 .weather-result {
-    filter: grayscale(100%);
-    background-size: cover;
+
+    /*background-size: cover;
+    background-position: center;*/
+    width:99.9%;
     min-width: 300px;
     min-height: 300px;
-    width:33.3%;
     flex: 0 0 400;
     display: flex;
     justify-content: center;
@@ -84,24 +87,22 @@ article {
     border:black solid 2px;
     transition: 1s;
 }
-.weather-result:first-child {
-    width:99.9%;
-    background-position: center;
-}
- /* this psuedo-class will remove the greyscale filter on hover */ 
+
+ /* this psuedo-class will remove the greyscale filter on hover 
 .weather-result:hover {
     filter:none;
-}
+}*/ 
 
-.weather-result p {
-    color:white;
-    text-shadow: 8px 8px 20px black;
+#currentWeather {
+    color:black;
+    /*text-shadow: 8px 8px 20px black;*/
     font-size:25px;
 }
 
-.weather-result a {
-    padding: 100px 200px;
-    text-decoration: none;;
+#forecastFive {
+    display: block;
+    padding: 10px 20px;
+
 }
 
 /* large screens */
