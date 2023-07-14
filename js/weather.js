@@ -17,23 +17,16 @@ var ul = document.querySelector("ul");
 let itemsArray = localStorage.getItem("cityName") ?
 JSON.parse(localStorage.getItem("cityName")) : [];
 
-
-
 itemsArray.forEach(addCity);
 function addCity(text){
   var li = document.createElement('li')
   li.textContent = text;
   ul.appendChild(li);
 }
-function add(){
-    itemsArray.push(input.value);
-    localStorage.setItem('cityName', city);
-    addCity(input.value);
-    input.value = '';
-  }
+
   function add(){
     itemsArray.push(input.value);
-    localStorage.setItem('cityName', JSON.stringify(itemsArray));
+    localStorage.setItem('cityName', itemsArray);
     addTask(input.value);
     input.value = '';
   }
