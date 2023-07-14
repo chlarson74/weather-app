@@ -43,6 +43,8 @@ nav a:hover {
 }
 aside {
     width: 20%;
+    padding: 10px;
+    border-right: 1px solid white;
 }
 
 aside p {
@@ -66,6 +68,7 @@ aside a {
 }
 section {
     width: 80%;
+    padding-left:10px;
 }
 /* creates a flex-wrap for the project images */
 article {
@@ -87,14 +90,25 @@ article {
     border:black solid 2px;
     transition: 1s;
 }
+label {
+    font-size:20px;
+    margin:10px 0px;
+    display: inline-block;
+}
+input,
+button { 
+    width: 100%;
+    margin:10px 0px;
+    font-size:18px;
 
+}
  /* this psuedo-class will remove the greyscale filter on hover 
 .weather-result:hover {
     filter:none;
 }*/ 
 
 #currentWeather {
-    color:black;
+    color:white;
     /*text-shadow: 8px 8px 20px black;*/
     font-size:25px;
 }
@@ -104,7 +118,21 @@ article {
     padding: 10px 20px;
 
 }
-
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  /* Add some content at the bottom of the video/page */
+.content {
+    position: fixed;
+    top: 0;
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
 /* large screens */
 @media screen and (max-width: 1324px) {
     .weather-result {

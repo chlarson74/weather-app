@@ -12,20 +12,24 @@
         <link rel="stylesheet" href="./styles/weather.css" type="text/css">
 </head>
 <body>
+    <video autoplay muted loop id="myVideo">
+        <source src="./images/sky.mp4" type="video/mp4">
+      </video>
+     <div class="content"> 
     <header>
         <h1>Weather Watch</h1>
-        <nav>
-            <p>write some introductory content</p>
-        </nav>
+
     </header>
     <main>
         <!-- place an aside with 20% width to complement the article portion -->
         <aside>
+            <p>find the current weather<br> and 5 day forecast</p>
             <form>
-                <label for="cityName">City Search</label>
-                <input type="text" id="cityName" name="cityName"><br>
-                <button type="submit" value="Submit" id="submitButton">Search</button>
+                <label for="cityName">City Search</label><br>
+                <input type="text"  id="cityName" name="cityName" placeholder="Enter City..."><br>
+                <button  type="submit text" value="Submit" id="submitButton" >Search</button>
               </form>
+                
         </aside>
         <!-- weather results inside an article with 80% width -->
         <section>
@@ -41,6 +45,7 @@
                     </article>     
         </section>
     </main>
+    </div>
     <!--footer id="contact">
         <nav>
             <links out to resources>
@@ -51,5 +56,6 @@
     </footer -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.9/dayjs.min.js" integrity="sha512-q4Xn+ZU2K+dqJPL8a3TiyGsDa31IkR/rLt/w+fy8jLrx8TdXj0dLM1Aq4aPXnOOKxHEya/bD9DePDB2DHm4jJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/weather.js"></script>
+    <script src="./js/todo.js"></script>
 </body>
 </html>

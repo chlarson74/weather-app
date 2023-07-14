@@ -1,11 +1,7 @@
 // SET OF GLOBAL VARIABLES — 
 var city
-// var citySearched - searchHistory citylist
-// var input for text field in the form
-// var form for the input for itself
-// var currentDay = query selector -
-// var fiveDayForecast = query selector 
 
+// var citySearched - searchHistory citylist
 
 
 // eventListener on button gets the value and store it to a variable
@@ -13,7 +9,11 @@ document.getElementById("submitButton").addEventListener("click", function(event
     event.preventDefault()
     city = document.getElementById("cityName").value
     getweather(city)
-})
+    localStorage.setItem("cityName", JSON.stringify(city))
+    //document.getElementById("cityName").innerHTML = localStorage.getItem("city");
+})  
+
+
 
 function getweather(city) {
     var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=3e85ced668f2df90136271de3aede161&units=imperial"  
@@ -79,32 +79,6 @@ function displayFiveDayWeather(forecast){
     }
 }
 
-// function displayFiveDayWeather(forecast){
-//     for (var i = 7; i < forecast.length; i+=8){
-//         var day=forecast[i]
-//         console.log(day)
-//         var forecastEl=document.getElementById("forecastOne")
-//         forecastEl.innerHTML = ""
-//         var cityNameEl = document.createElement("span")
-//         cityNameEl.innerText = city + " "
-//         forecastEl.appendChild(cityNameEl)
-//         var dateEl = document.createElement("span")
-//         dateEl.innerText = dayjs.unix(day.dt).format("MM/DD/YYYY")
-//         forecastEl.appendChild(dateEl)
-//         var imageEl = document.createElement("img")
-//         imageEl.src = "https://openweathermap.org/img/wn/" + day.weather[0].icon + ".png"
-//         forecastEl.appendChild(imageEl)
-//         var temperatureEl = document.createElement("p")
-//         temperatureEl.innerText = "temperature " + day.main.temp + "°"
-//         forecastEl.appendChild(temperatureEl)
-//         var humidityEl = document.createElement("p")
-//         humidityEl.innerText = "humidity " + day.main.humidity + "%"
-//         forecastEl.appendChild(humidityEl)
-//         var windEl = document.createElement("p")
-//         windEl.innerText = "wind speed " + day.wind.speed + "mph"
-//         forecastEl.appendChild(windEl)
-//     }
-// }
 
 // ——————— (in a function called searchWeather ————————————
 // STEP THREE:
