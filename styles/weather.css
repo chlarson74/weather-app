@@ -7,20 +7,16 @@
     scroll-behavior: smooth; /* learned about slow scroll behavior from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp */
 }
 
-body{
-    background-color: #f5f5f5;
-}
+body
 
 /* created a flex container for the header, main and footer elements */
 header,
-main,
-footer {
+main {
     display: flex;
-    width: 85%;
+    width: 95%;
     margin:20px  auto;
     justify-content: space-between;
 }
-
 
 /* created even spacing in the header and footer navs */
 nav {
@@ -28,31 +24,6 @@ nav {
     justify-content: space-evenly;
     width: 80%;
 }
-/*nav a {
-    border-left: solid black 1px;
-    justify-content: center;
-    align-content:center;
-    padding-left:15px;
-    text-decoration: none;
-    color:black;
-    width: 100%;
-    width: 400px;
-}
-aside a {
-    text-decoration: none;
-    font-weight: bold;
-    color:black;
-}
-.faze {
-    width:80%;
-    height: auto;
-    filter: grayscale(100%);
-    transition:1s;
-    box-shadow: 2px 2px 10px black;
-}
-nav a:hover {
-    background-color:lightgray;
-}*/
 
 aside {
     width: 20%;
@@ -68,16 +39,12 @@ section {
     width: 80%;
     padding-left:10px;
 }
-/* creates a flex-wrap for the project images */
+/* creates a flex-wrap for the 5 day forecast */
 article {
     display: flex;
     flex-wrap: wrap;
 }
-/* filter property changes the image to a grayscale. creates a flex container for the paragraph tag to justify and align center. */
 .weather-result {
-
-    /*background-size: cover;
-    background-position: center;*/
     width:99.9%;
     min-width: 300px;
     min-height: 300px;
@@ -99,10 +66,6 @@ button {
     font-size:18px;
 
 }
- /* this psuedo-class will remove the greyscale filter on hover 
-.weather-result:hover {
-    filter:none;
-}*/ 
 
 #currentWeather {
     color:white;
@@ -114,6 +77,7 @@ button {
     padding: 10px 20px;
 
 }
+/* this will display a background video behind the content div*/
 #myVideo {
     position: fixed;
     right: 0;
@@ -121,7 +85,7 @@ button {
     min-width: 100%;
     min-height: 100%;
   }
-  /* Add some content at the bottom of the video/page */
+  /* this will control the content section that will display over the background video */
 .content {
     position: fixed;
     top: 0;
@@ -165,12 +129,6 @@ button {
     article,
     aside {
         width: 100%;
-    }
-    footer h2 {
-        display: none;
-    }
-    .faze {
-        width:30%;
     }
 
 }

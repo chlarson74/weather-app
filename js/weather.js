@@ -12,12 +12,13 @@ document.getElementById("submitButton").addEventListener("click", function(event
     localStorage.setItem("cityName", city)
 
 })  
-
+//targets the cityName saved in localStorage and appends it to the ul named recentSearch
 var ul = document.querySelector("ul");
 var itemsArray = localStorage.getItem("cityName")
 console.log(itemsArray)
 //var savedCities = JSON.parse(localStorage.getItem("cityName"))
 
+//should be adding li to ul id recentSearch but I can't find the bug that is preventing this.
 itemsArray.forEach(addCity);
 function addCity(text){
   var li = document.createElement('li')
@@ -26,7 +27,7 @@ function addCity(text){
   console.log(li)
 }
 
-
+//will stringify the array of recently searched cities to - ideally -- append to the li
   function add(){
     itemsArray.push(input.value);
     localStorage.setItem('cityName', JSON.stringify(itemsArray));
@@ -35,7 +36,7 @@ function addCity(text){
   }
 //localStorage.getItem("cityName");
 
-
+//access the openweathermap api to query parameters. concatenating city into the parameters and added my own api key. imperial is added to the end to show fahrenheit instead of kelvin.
 function getweather(city) {
     var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=3e85ced668f2df90136271de3aede161&units=imperial"  
     fetch(url)
@@ -48,6 +49,7 @@ function getweather(city) {
         displayCurrentWeather(currentDay, data.list)
     })
 }
+//this function will display the current weather and using dot notiation we can target a variety of parameters and append them to the document
 function displayCurrentWeather(currentDay, forecast){
     var currentWeatherEl = document.getElementById("currentWeather")
     currentWeatherEl.innerHTML = ""
@@ -72,6 +74,7 @@ function displayCurrentWeather(currentDay, forecast){
     displayFiveDayWeather(forecast)
 }
 
+//appending various parameters to the 5 day forecast based on dot notation
 function displayFiveDayWeather(forecast){
     for (var i = 7; i < forecast.length; i+=8){
         var day=forecast[i]
@@ -100,40 +103,6 @@ function displayFiveDayWeather(forecast){
     }
 }
 
-// this will store the recent searched cities
-
-
-// ——————— (in a function called searchWeather ————————————
-// STEP THREE:
-// create a variable for the URL for the city name and API key
-
-// STEP FOUR:
-// send a fetch request to get the data at the URL
-
-// STEP FIVE:
-// elements with ID to update the data that is returned
-// note: for the current day weather select the 0 item
-
-// STEP SIX:
-// five day forecast
-// need a for loop to loop over the data that is returned
-// each loop needs to create an element and adjust the element’s text and append it to an existing empty HTML element
-// our loop will need to start on seven and increase by 8 each time (i = 7; i < variable.length; i+=8)
-
-// STEP SEVEN:
-// take the city searched and add it to a localStorage array
-// what if this is the first time? If no localStorage - create it as an empty array - push the new city into it - save the updated array.
-
-// STEP EIGHTa:
-// each time they search - update the display with the search - for loop - create an li for each item and append to the screen
-// ————— ends searchWeather function) ———————————
-
-
-// STEP EIGHT:
-// display the localStorage when the page loads
-
-// STEP NINE:
-// add an eventListener - part of the display part - when clicked - call the searched weather 
 
 //INTERNAL NOTES:
 // get familiar with the API —  
@@ -151,5 +120,5 @@ function displayFiveDayWeather(forecast){
 // THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
 // WHEN I view future weather conditions for that city
 // THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-// WHEN I click on a city in the search history
+// WHEN I click on a city in the search history -- could not get this to work, unfortunately.
 // THEN I am again presented with current and future conditions for that city
