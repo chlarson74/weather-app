@@ -14,15 +14,18 @@ document.getElementById("submitButton").addEventListener("click", function(event
 })  
 
 var ul = document.querySelector("ul");
-let itemsArray = localStorage.getItem("cityName") ?
-JSON.parse(localStorage.getItem("cityName")) : [];
+var itemsArray = localStorage.getItem("cityName")
+console.log(itemsArray)
+//var savedCities = JSON.parse(localStorage.getItem("cityName"))
 
 itemsArray.forEach(addCity);
 function addCity(text){
   var li = document.createElement('li')
   li.textContent = text;
   ul.appendChild(li);
+  console.log(li)
 }
+
 
   function add(){
     itemsArray.push(input.value);

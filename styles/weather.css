@@ -28,7 +28,7 @@ nav {
     justify-content: space-evenly;
     width: 80%;
 }
-nav a {
+/*nav a {
     border-left: solid black 1px;
     justify-content: center;
     align-content:center;
@@ -36,11 +36,24 @@ nav a {
     text-decoration: none;
     color:black;
     width: 100%;
-    /*width: 400px;*/
+    width: 400px;
+}
+aside a {
+    text-decoration: none;
+    font-weight: bold;
+    color:black;
+}
+.faze {
+    width:80%;
+    height: auto;
+    filter: grayscale(100%);
+    transition:1s;
+    box-shadow: 2px 2px 10px black;
 }
 nav a:hover {
     background-color:lightgray;
-}
+}*/
+
 aside {
     width: 20%;
     padding: 10px;
@@ -50,22 +63,7 @@ aside {
 aside p {
     margin:20px 20px 20px 0;
 }
-aside a {
-    text-decoration: none;
-    font-weight: bold;
-    color:black;
-}
-/* faze will adjust the aesthetic to the profile photo */
-.faze {
-    width:80%;
-    height: auto;
-    filter: grayscale(100%);
-    transition:1s;
-    box-shadow: 2px 2px 10px black;
-}
-.faze:hover {
-    filter:none; 
-}
+
 section {
     width: 80%;
     padding-left:10px;
@@ -87,7 +85,6 @@ article {
     display: flex;
     justify-content: center;
     align-items: center;
-    border:black solid 2px;
     transition: 1s;
 }
 label {
@@ -109,7 +106,6 @@ button {
 
 #currentWeather {
     color:white;
-    /*text-shadow: 8px 8px 20px black;*/
     font-size:25px;
 }
 
