@@ -9,9 +9,35 @@ document.getElementById("submitButton").addEventListener("click", function(event
     event.preventDefault()
     city = document.getElementById("cityName").value
     getweather(city)
-    localStorage.setItem("cityName", JSON.stringify(city))
-    //document.getElementById("cityName").innerHTML = localStorage.getItem("city");
+    localStorage.setItem("cityName", city)
+
 })  
+
+var ul = document.querySelector("ul");
+let itemsArray = localStorage.getItem("cityName") ?
+JSON.parse(localStorage.getItem("cityName")) : [];
+
+
+
+itemsArray.forEach(addCity);
+function addCity(text){
+  var li = document.createElement('li')
+  li.textContent = text;
+  ul.appendChild(li);
+}
+function add(){
+    itemsArray.push(input.value);
+    localStorage.setItem('cityName', city);
+    addCity(input.value);
+    input.value = '';
+  }
+  function add(){
+    itemsArray.push(input.value);
+    localStorage.setItem('cityName', JSON.stringify(itemsArray));
+    addTask(input.value);
+    input.value = '';
+  }
+//localStorage.getItem("cityName");
 
 
 
@@ -55,7 +81,7 @@ function displayFiveDayWeather(forecast){
     for (var i = 7; i < forecast.length; i+=8){
         var day=forecast[i]
         //console.log(forecast)
-        //below will loop through the i and append to the ids with 8 iterations
+        //below will loop through the i and append to the ids seperated by 8 integers to account for the 3 hour spans
         var forecastEl=document.getElementById(`forecast${i}`)
         forecastEl.innerHTML = ""
         var cityNameEl = document.createElement("span")
@@ -78,6 +104,8 @@ function displayFiveDayWeather(forecast){
         forecastEl.appendChild(windEl)
     }
 }
+
+// this will store the recent searched cities
 
 
 // ——————— (in a function called searchWeather ————————————
@@ -116,7 +144,7 @@ function displayFiveDayWeather(forecast){
 // get familiar with the API —  
 // https://openweathermap.org/forecast5#builtin, 
 // https://openweathermap.org/forecast5#JSON -
-// https://home.openweathermap.org/api_keys — evcc email — Rookery#12
+// https://home.openweathermap.org/api_keys — evcc email
 // openweather API key = 3e85ced668f2df90136271de3aede161
 
 
