@@ -26,12 +26,11 @@ function addCity(text){
 
   function add(){
     itemsArray.push(input.value);
-    localStorage.setItem('cityName', itemsArray);
+    localStorage.setItem('cityName', JSON.stringify(itemsArray));
     addTask(input.value);
     input.value = '';
   }
 //localStorage.getItem("cityName");
-
 
 
 function getweather(city) {
