@@ -7,20 +7,19 @@
 | HTML    | [W3Schools - HTML](https://www.w3schools.com/html/html_intro.asp) | 
 | CSS     | [W3Schools - CSS](https://www.w3schools.com/css/css_intro.asp)      | 
 | JQUERY       | [About jQuery](https://jquery.com/)     |   
-| DayJS       | [About DayJS](https://day.js.org/)     | 
+| OpenWeatherMap | [About OpenWeatherMap](https://openweathermap.org)     | 
 | Git       | [About GitHub](https://git-scm.com/about)     |    
 
 ## Description 
 
-[View the webpage](https://chlarson74.github.io/daily-planner)
+[View the webpage](https://chlarson74.github.io/weather-app)
 
-The project is a dynamic daily planner webpage that will visually show the hours of the work day - past, present and future by color. The data that the user puts into the hour fields will be stored in localStorage and can be retained even through refreshing the page. 
+The project is a dynamic weather report application. It utilizes openweathermap.org to supply the data that is parsed into the webpage. When a city is searched the web page will display the current weather of the city and a 5 day forecast. 
 
 Work completed:
-- Utilized DayJS to dynamically update the date
-- Created a time block for each work hour of the day for the user to store and retain information within.
-- Each hour block of the day will dynamically update by color. As the hours pass the future, present and past hours will have new colors.
-- I was given the HTML, CSS and an incomplete JS file. I used jQuery methodes to update the JS file. There were some IDs that I need to add to the HTML document.
+- Utilized openweathermap.org to dynamically update the weather data for current weather and a 5 day forecast.
+- Created an element for the necessary information to append to on a click eventListener.
+- Provided a clean user interface with a video background for visual appeal.
 
 
 
@@ -30,14 +29,17 @@ Webpage deployed online is accessible through a web browser like Google Chrome.
 
 
 ## Learning Points 
-
+- I learned how to utilize data that is provided by a third party api to dynamically update information on my website.
 - I furthered my understanding of connecting the dynamic functions of javascript to element in the HTML document
-- I learned to use third-party resources to include within the JS file.
 - The DayJS third-party was helpful in bringing in more dynamic elements
-- I furthered my understanding of localStorage to retain information
-- I learned and utilzed the simplified javascript library jQuery
+- I worked to research and grow my understanding of localStorage in order to retain information.
+- Spent a lot of time trying to debug and discover failing issues within my javascript. 
+- More research and learning is clearly required. 
 
-[sample of functionality](./demo.gif)
+![sample of functionality](/images/1-first.jpg)
+![sample of functionality](/images/2-search.jpg)
+![sample of functionality](/images/3-results.jpg)
+![sample of functionality](/images/4-console%20log.jpg)
 
 ## Author Info
 
